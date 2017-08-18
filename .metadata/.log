@@ -1,0 +1,134 @@
+!SESSION 2017-08-18 15:26:27.149 -----------------------------------------------
+eclipse.buildId=3.9.0.201707061823-RELEASE-e47
+java.version=1.8.0_121
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.springsource.sts.ide -product org.springsource.sts.ide -product org.springsource.sts.ide -keyring /Users/Charlie/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.springsource.sts.ide -product org.springsource.sts.ide -data /Users/Charlie/SD/Java/Night Out Tracker -product org.springsource.sts.ide -keyring /Users/Charlie/.eclipse_keyring
+
+!ENTRY org.springframework.ide.eclipse.buildship20 4 0 2017-08-18 15:26:29.528
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.buildship20 [902]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.springframework.ide.eclipse.buildship20 [osgi.identity; type="osgi.bundle"; version:Version="3.9.0.201707061730-RELEASE"; osgi.identity="org.springframework.ide.eclipse.buildship20"; singleton:="true"] because it is exposed to package 'com.google.common.base' from resources com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="21.0.0.v20170206-1425"; osgi.identity="com.google.guava"] and com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="15.0.0.v201403281430"; osgi.identity="com.google.guava"] via two dependency chains.
+
+Chain 1:
+  org.springframework.ide.eclipse.buildship20 [osgi.identity; type="osgi.bundle"; version:Version="3.9.0.201707061730-RELEASE"; osgi.identity="org.springframework.ide.eclipse.buildship20"; singleton:="true"]
+    require: (osgi.wiring.bundle=com.gradleware.tooling.model)
+     |
+    provide: osgi.wiring.bundle: com.gradleware.tooling.model
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="21.0.0.v20170206-1425"; osgi.identity="com.google.guava"]
+
+Chain 2:
+  org.springframework.ide.eclipse.buildship20 [osgi.identity; type="osgi.bundle"; version:Version="3.9.0.201707061730-RELEASE"; osgi.identity="org.springframework.ide.eclipse.buildship20"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.springsource.ide.eclipse.commons.livexp)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="3.9.0.201707061630-RELEASE"; osgi.wiring.bundle="org.springsource.ide.eclipse.commons.livexp"
+  org.springsource.ide.eclipse.commons.livexp [osgi.identity; type="osgi.bundle"; version:Version="3.9.0.201707061630-RELEASE"; osgi.identity="org.springsource.ide.eclipse.commons.livexp"]
+    require: (&(osgi.wiring.bundle=com.google.guava)(&(bundle-version>=15.0.0)(!(bundle-version>=16.0.0))))
+     |
+    provide: osgi.wiring.bundle: com.google.guava
+  com.google.guava [osgi.identity; type="osgi.bundle"; version:Version="15.0.0.v201403281430"; osgi.identity="com.google.guava"]
+	at org.eclipse.osgi.container.Module.start(Module.java:444)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1628)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1607)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1579)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1522)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.ui 2 0 2017-08-18 15:26:32.475
+!MESSAGE Warnings while parsing the images from the 'org.eclipse.ui.commandImages' extension point.
+!SUBENTRY 1 org.eclipse.ui 2 0 2017-08-18 15:26:32.476
+!MESSAGE Cannot bind to an undefined command: plug-in='com.genuitec.eclipse.theming.ui', id='com.genuitec.myeclipse.help.darktheme.commandid'
+
+!ENTRY org.eclipse.core.net 1 0 2017-08-18 15:26:32.707
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY com.genuitec.eclipse.theming.ui 1 0 2017-08-18 15:26:35.240
+!MESSAGE Darkest Dark theme is being activated on this workspace; preparing colors and configuration
+
+!ENTRY com.genuitec.eclipse.theming.ui 1 0 2017-08-18 15:26:36.359
+!MESSAGE Darkest Dark has archived current color configurations to alternate preferences - will be restored when switching out of Darkest Dark theme
+
+!ENTRY com.genuitec.eclipse.theming.ui 1 0 2017-08-18 15:26:36.907
+!MESSAGE Darkest Dark detected colors from an earlier Eclipse Color Theme install that are being cleaned up to avoid workspace pollution
+
+!ENTRY org.eclipse.ui 2 2 2017-08-18 15:26:39.524
+!MESSAGE org.eclipse.jdt.junit.ResultView: Deprecated relationship "fast" should be converted to "stack".
+
+!ENTRY org.eclipse.ui 2 2 2017-08-18 15:26:39.525
+!MESSAGE org.springframework.ide.eclipse.aop.ui.navigator.aopReferenceModelNavigator: Deprecated relationship "fast" should be converted to "stack".
+
+!ENTRY org.eclipse.ui 2 2 2017-08-18 15:26:39.525
+!MESSAGE org.eclipse.contribution.xref.ui.views.XReferenceView: Deprecated relationship "fast" should be converted to "stack".
+
+!ENTRY org.eclipse.jface.text 2 0 2017-08-18 15:26:40.589
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.number'
+
+!ENTRY org.eclipse.jface.text 2 0 2017-08-18 15:26:40.589
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.round'
+
+!ENTRY org.eclipse.core.resources 4 4 2017-08-18 15:28:04.115
+!MESSAGE Exception occurred while saving project preferences: /NightOutREST/.settings/org.eclipse.buildship.core.prefs.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: A resource already exists on disk '/Users/Charlie/SD/Java/Night Out Tracker/NightOutREST/.settings'.
+	at org.eclipse.core.internal.resources.Folder.assertCreateRequirements(Folder.java:47)
+	at org.eclipse.core.internal.resources.Folder.create(Folder.java:93)
+	at org.eclipse.core.internal.resources.ProjectPreferences$1.run(ProjectPreferences.java:634)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.ProjectPreferences.save(ProjectPreferences.java:660)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalFlush(EclipsePreferences.java:431)
+	at org.eclipse.core.internal.resources.ProjectPreferences.flush(ProjectPreferences.java:365)
+	at org.eclipse.buildship.core.configuration.internal.PreferenceStore$ProjectScopeEclipsePreferencesPreferenceStore.flush(PreferenceStore.java:151)
+	at org.eclipse.buildship.core.configuration.internal.BuildConfigurationPersistence.saveRootDirPreference(BuildConfigurationPersistence.java:160)
+	at org.eclipse.buildship.core.configuration.internal.BuildConfigurationPersistence.savePathToRoot(BuildConfigurationPersistence.java:90)
+	at org.eclipse.buildship.core.configuration.internal.DefaultConfigurationManager.saveProjectConfiguration(DefaultConfigurationManager.java:130)
+	at org.eclipse.buildship.core.workspace.internal.SynchronizeGradleBuildOperation.synchronizeGradleProjectWithWorkspaceProject(SynchronizeGradleBuildOperation.java:170)
+	at org.eclipse.buildship.core.workspace.internal.SynchronizeGradleBuildOperation.access$000(SynchronizeGradleBuildOperation.java:99)
+	at org.eclipse.buildship.core.workspace.internal.SynchronizeGradleBuildOperation$1.run(SynchronizeGradleBuildOperation.java:134)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2262)
+	at org.eclipse.buildship.core.workspace.internal.SynchronizeGradleBuildOperation.synchronizeProjectsWithWorkspace(SynchronizeGradleBuildOperation.java:131)
+	at org.eclipse.buildship.core.workspace.internal.SynchronizeGradleBuildOperation.run(SynchronizeGradleBuildOperation.java:115)
+	at org.eclipse.buildship.core.workspace.internal.SynchronizeGradleBuildsJob.synchronizeBuild(SynchronizeGradleBuildsJob.java:85)
+	at org.eclipse.buildship.core.workspace.internal.SynchronizeGradleBuildsJob.runToolingApiJob(SynchronizeGradleBuildsJob.java:73)
+	at org.eclipse.buildship.core.util.progress.ToolingApiJob$1.run(ToolingApiJob.java:73)
+	at org.eclipse.buildship.core.util.progress.ToolingApiInvoker.invoke(ToolingApiInvoker.java:62)
+	at org.eclipse.buildship.core.util.progress.ToolingApiJob.run(ToolingApiJob.java:70)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+!SUBENTRY 1 org.eclipse.core.resources 4 272 2017-08-18 15:28:04.116
+!MESSAGE A resource already exists on disk '/Users/Charlie/SD/Java/Night Out Tracker/NightOutREST/.settings'.
+
+!ENTRY org.eclipse.buildship.core 4 0 2017-08-18 15:28:04.178
+!MESSAGE Synchronize Gradle projects with workspace failed due to an error configuring Eclipse.
+!STACK 0
+org.eclipse.buildship.core.GradlePluginsRuntimeException: Cannot store preferences in project NightOutREST in node org.eclipse.buildship.core.
+	at org.eclipse.buildship.core.configuration.internal.PreferenceStore$ProjectScopeEclipsePreferencesPreferenceStore.flush(PreferenceStore.java:153)
+	at org.eclipse.buildship.core.configuration.internal.BuildConfigurationPersistence.saveRootDirPreference(BuildConfigurationPersistence.java:160)
+	at org.eclipse.buildship.core.configuration.internal.BuildConfigurationPersistence.savePathToRoot(BuildConfigurationPersistence.java:90)
+	at org.eclipse.buildship.core.configuration.internal.DefaultConfigurationManager.saveProjectConfiguration(DefaultConfigurationManager.java:130)
+	at org.eclipse.buildship.core.workspace.internal.SynchronizeGradleBuildOperation.synchronizeGradleProjectWithWorkspaceProject(SynchronizeGradleBuildOperation.java:170)
+	at org.eclipse.buildship.core.workspace.internal.SynchronizeGradleBuildOperation.access$000(SynchronizeGradleBuildOperation.java:99)
+	at org.eclipse.buildship.core.workspace.internal.SynchronizeGradleBuildOperation$1.run(SynchronizeGradleBuildOperation.java:134)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2262)
+	at org.eclipse.buildship.core.workspace.internal.SynchronizeGradleBuildOperation.synchronizeProjectsWithWorkspace(SynchronizeGradleBuildOperation.java:131)
+	at org.eclipse.buildship.core.workspace.internal.SynchronizeGradleBuildOperation.run(SynchronizeGradleBuildOperation.java:115)
+	at org.eclipse.buildship.core.workspace.internal.SynchronizeGradleBuildsJob.synchronizeBuild(SynchronizeGradleBuildsJob.java:85)
+	at org.eclipse.buildship.core.workspace.internal.SynchronizeGradleBuildsJob.runToolingApiJob(SynchronizeGradleBuildsJob.java:73)
+	at org.eclipse.buildship.core.util.progress.ToolingApiJob$1.run(ToolingApiJob.java:73)
+	at org.eclipse.buildship.core.util.progress.ToolingApiInvoker.invoke(ToolingApiInvoker.java:62)
+	at org.eclipse.buildship.core.util.progress.ToolingApiJob.run(ToolingApiJob.java:70)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:56)
+Caused by: org.osgi.service.prefs.BackingStoreException: Exception occurred while saving project preferences: /NightOutREST/.settings/org.eclipse.buildship.core.prefs.
+	at org.eclipse.core.internal.resources.ProjectPreferences.save(ProjectPreferences.java:670)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalFlush(EclipsePreferences.java:431)
+	at org.eclipse.core.internal.resources.ProjectPreferences.flush(ProjectPreferences.java:365)
+	at org.eclipse.buildship.core.configuration.internal.PreferenceStore$ProjectScopeEclipsePreferencesPreferenceStore.flush(PreferenceStore.java:151)
+	... 16 more
+
+!ENTRY org.eclipse.lsp4e 1 0 2017-08-18 15:28:29.881
+!MESSAGE Non IFiles not supported yet

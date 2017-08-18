@@ -1,0 +1,5 @@
+INDEX VERSION 1.4+/Users/Charlie/SD/Java/Night Out Tracker/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+13749478.index
+3330161065.index
+1713881921.index
+518935992.index
