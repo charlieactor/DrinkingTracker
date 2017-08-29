@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="well">
+  	<h2>Night Out Tracker</h2>
+  </div>
+  <div class="well">
+  	<button ng-hide="vm.showCreateForm || vm.showStats" type="btn" class="btn btn-success" ng-click="vm.showCreateForm = true;">Create New NightOut</button>
+  	<button ng-hide="vm.showStats" type="btn" class="btn btn-info" ng-click="vm.showStats = true">Show Statistics</button>
+  	<div ng-show="vm.showStats">
+  		<h3>Average Number of drinks consumed: {{vm.averageDrinksHad()}}</h3>
+  		<h3>Average Number of hours spent drinking: {{vm.averageHoursSpent()}}</h3> 
+  		<h3>Average number of calories consumed: {{vm.averageCaloriesConsumed()}}</h3>
+  		<h3>Average number of hookups: {{vm.averageNumberOfHookups()}}</h3>
+  		<button type="btn" class="btn btn-info" ng-click="vm.showStats = false;">Go Back</button>
+  	</div>
+  	<div ng-show="vm.showCreateForm">
+  	  <form>
+  	  	<input placeholder="Name" ng-model="user.name"> <br>
+  	  	<input placeholder="Number of Drinks" ng-model="user.numberOfDrinks"><br> 
+  	  	<input placeholder="Number Of Hours" ng-model="user.numberOfHours"> <br>
+  	  	<input placeholder="Total Calories" ng-model="user.totalCalories"> <br>
+  	  	<input placeholder="Number Of Hookups" ng-model="user.numberOfHookups"><br> 
+  	  	Did you Puke?<br> 
+  	  	Yes: <input type="radio" value="true" ng-model="user.didPuke"><br>
+  	  	No: <input type="radio" value="false" ng-model="user.didPuke"><br>
+  	  	<button type="btn" class="btn btn-success" ng-click="vm.create(user)">Add Night Out</button>
+  	  	<button type="btn" class="btn btn-warning" ng-click="vm.showCreateForm = false;">Cancel</button>
+  	  </form>
+  	</div>
+  </div>
+  <div class="well" ng-hide="vm.selected || vm.edit || vm.showStats" ng-repeat="night in vm.nightsOut"  ng-click="vm.show(night.id)">
+	<h3>{{night.name}}'s NightOut</h3>
+	  <ul>
+		<li>Number of Drinks: {{night.numberOfDrinks}}</li>
+		<li>Number of Hours: {{night.numberOfHours}}</li>
+		<li>Total Calories: {{night.totalCalories}}</li>
+		<li>Number of Hookups: {{night.numberOfHookups}}</li>
+		<li>Puke? {{night.didPuke}}</li>
+	  </ul>
+
+  </div>
+  
+  <div class="well" ng-show="vm.selected">
+  	<h3>{{vm.selected.name}}'s NightOut</h3>
+	  <ul>
+		<li>Number of Drinks: {{vm.selected.numberOfDrinks}}</li>
+		<li>Number of Hours: {{vm.selected.numberOfHours}}</li>
+		<li>Total Calories: {{vm.selected.totalCalories}}</li>
+		<li>Number of Hookups: {{vm.selected.numberOfHookups}}</li>
+		<li>Puke? {{vm.selected.didPuke}}</li>
+	  </ul>
+	  <button type="btn" class="btn btn-info" ng-click="vm.selected = null">Go Back</button>
+	  <button type="btn" class="btn btn-warning" ng-click="vm.edit = vm.selected; vm.selected = null;">Edit</button>
+	  <button type="btn" class="btn btn-danger" ng-click="vm.delete(vm.selected.id)">Delete</button>
+  </div>
+  <div class="well" ng-show="vm.edit">
+  	<h3>{{vm.edit.name}}'s NightOut</h3>
+	  <form>
+	  	<input type="hidden" ng-model="vm.edit.name">
+	  	Number of Drinks: <input ng-model="vm.edit.numberOfDrinks"><br>
+	  	Number of Hours: <input ng-model="vm.edit.numberOfHours"><br>
+	  	Total Calories: <input ng-model="vm.edit.totalCalories"><br>
+	  	Number of Hookups: <input ng-model="vm.edit.numberOfHookups"><br>
+	  	Did you puke? <br>
+	  	Yes: <input type="radio" value = "true" ng-model="vm.edit.didPuke"><br>
+	  	No: <input type="radio" value = "false" ng-model="vm.edit.didPuke"><br>
+		<button type="btn" class="btn btn-success" ng-click="vm.update(vm.edit.id, vm.edit)">Submit</button> 
+  	    <button type="btn" class="btn btn-info" ng-click="vm.edit = null">Cancel</button>
+	  </form>
+  </div>
+</div>
+
